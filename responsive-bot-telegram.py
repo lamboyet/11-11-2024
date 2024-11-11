@@ -2,15 +2,6 @@
 
 import requests
 
-
-TOKEN ='7793875485:AAEp1utsvSvGbXe-u7Id6Pd_M0dDLv03KyI'
-BOT_USERNAME = 'thesecondpythonhippobot'
-CHAT_ID_GROUP =-4514881782
-CHAT_ID_HIPPO =5917103043
-CHAT_ID_SEBI=1463017007
-CHAT_ID_BOTEL SQUAD GROUP= -1002498776343
-
-
 def send_telegram_message(token, chat_id, message):
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     payload = {'chat_id':chat_id,
@@ -57,28 +48,6 @@ def handle_response(text: str) -> str:
         return 'Hi!'
     if 'how are you?' in processed:
         return 'I am good. How are you feeling today?'
-    if 'botel, who is the prettiest girl you know?' in processed:
-        return 'Iulia Popotamuta ❤️'
-    if 'are you just saying?' in processed:
-        return "it's a secret"
-    if 'hippo botel, can you tell the other hippo i mishy mishy her?' in processed:
-        return "🐒 mishy mishy 🦛"
-    if 'what do we do when we mishy mishy?' in processed:
-        return "CUDDLES!"
-    if 'what else do we do?' in processed:
-        return "KISSY!"
-    if 'there is nobody to cuddly kissy here' in processed:
-        return "go find POPOTAMUTA 🦛❤️"
-    if 'mishy mishy monkey' in processed:
-        return "🐒❤️🦛"
-    if 'can you tell monkey i miss him?' in processed:
-        return "🐒❤️🦛"
-    if 'tell monkey i miss him' in processed:
-        return "🐒❤️🦛"
-    if 'you woke up?' in processed:
-        return "I don't like the way you talk to me."
-
-
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message_type: str = update.message.chat.type
